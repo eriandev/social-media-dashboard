@@ -1,0 +1,1 @@
+"use strict";const e=document.getElementById("checkbox");window.matchMedia("(prefers-color-scheme: dark)").matches&&e.setAttribute("checked",!0),e.addEventListener("change",(function(e){this.checked?(document.body.classList.remove("light-theme"),document.body.classList.add("dark-theme")):(document.body.classList.remove("dark-theme"),document.body.classList.add("light-theme"))}));
