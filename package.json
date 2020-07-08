@@ -1,0 +1,35 @@
+{
+  "name": "social-media-dashboard",
+  "version": "1.0.0",
+  "description": "Challenge #3 by frontendmentor.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erianvc/social-media-dashboard.git"
+  },
+  "main": "index.html",
+  "scripts": {
+    "watch": "postcss src/tailwind.css -o public/global.css -w",
+    "build": "cross-env NODE_ENV=production postcss src/tailwind.css -o public/global.css && npm run html:minify && npm run js:minify",
+    "html:minify": "npx html-minifier --input-dir ./public --output-dir ./public --collapse-whitespace --file-ext html",
+    "js:minify": "npx terser src/*.js -c -m toplevel -o public/app.js"
+  },
+  "keywords": [
+    "tailwindcss",
+    "frontend",
+    "challenge"
+  ],
+  "author": "erianvc",
+  "bugs": {
+    "url": "https://github.com/erianvc/social-media-dashboard/issues"
+  },
+  "homepage": "https://github.com/erianvc/social-media-dashboard#readme",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "cross-env": "^7.0.2",
+    "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "postcss-cli": "^7.1.1",
+    "tailwindcss": "^1.4.6",
+    "terser": "^4.8.0"
+  }
+}

@@ -1,0 +1,326 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap);
+
+:root {
+    font-size: 14px;
+    --facebook-color: hsl(208, 92%, 53%);
+    --twitter-color: hsl(203, 89%, 53%);
+    --instagram-color: linear-gradient(to right, hsl(37, 97%, 70%) 0%, hsl(329, 70%, 58%) 100%);
+    --youtube-color: hsl(348, 97%, 39%);
+    --base-color: theme('colors.dark-blue');
+    --bg-color: white;
+    --bg-header: theme('colors.pale-blue');
+    --bg-card: theme('colors.light-gray-blue');
+    --white-gray-toggle: theme('colors.desa-blue');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-inter min-h-screen;
+    color: var(--base-color);
+    background: var(--bg-color);
+    user-select: none;
+}
+
+header {
+    @apply w-full pt-8 pb-32 rounded-b-xl;
+    background: var(--bg-header);
+    transition: all 0.4s;
+}
+
+h1 {
+    @apply text-3xl font-bold;
+}
+
+h2 {
+    @apply text-lg font-bold text-desa-blue;
+}
+
+hr {
+    @apply my-6 border-desa-blue;
+}
+
+.toggle-theme {
+    @apply flex flex-wrap justify-between items-center;
+}
+
+.toggle-theme span {
+    @apply text-lg font-bold;
+    color: var(--white-gray-toggle);
+}
+
+.checkbox {
+    @apply hidden;
+}
+
+.checkbox:checked ~ .switch{
+    background: linear-gradient(to right, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 100%);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.checkbox:checked ~ .switch:before{
+    @apply bg-dark-desa-blue;
+    transform: translateX(30px);
+}
+
+.switch {
+    @apply block box-border cursor-pointer;
+    background: hsl(230, 22%, 74%);
+    border-radius: 20px;
+    height: 30px;
+    width: 60px;
+    padding: 5px;
+    user-select: none;
+}
+
+.switch::before {
+    @apply block bg-white; 
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    transform: translateX(0px);
+    transition: 0.3s;
+    will-change: transform;
+}
+
+
+
+/* MAIN CARDS */
+
+
+
+.cards {
+    @apply grid grid-cols-1 row-gap-8 -mt-24 mb-6;
+}
+
+.card {
+    @apply relative w-full py-8 text-center overflow-hidden rounded-lg;
+    background: var(--bg-card);
+}
+
+.card:before {
+    content: "";
+    height: 4px;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.facebook:before {
+    background: var(--facebook-color);
+}
+
+.twitter:before {
+    background: var(--twitter-color);
+}
+
+.instagram:before {
+    background: var(--instagram-color);
+}
+
+.youtube:before {
+    background: var(--youtube-color);
+}
+
+.card-title {
+    @apply flex items-center justify-center;
+}
+
+.card-title h3 {
+    @apply px-2 text-desa-blue font-bold;
+}
+
+.card-body {
+    @apply py-6;
+}
+
+.card-body .followers {
+    @apply py-1 text-6xl font-bold leading-none;
+}
+
+.card-body span {
+    @apply text-desa-blue uppercase;
+    letter-spacing: 0.4em;
+}
+
+.increasing {
+    @apply text-lime-green font-bold;
+}
+
+.decreasing {
+    @apply text-bright-red font-bold;
+}
+
+
+
+/* OVERVIEW SECTION */
+
+
+
+.overview {
+    @apply mt-12;
+}
+
+h4 {
+    @apply my-6 text-2xl font-bold;
+    color: var(--white-gray-toggle);
+}
+
+.overview .wrapper {
+    @apply grid grid-cols-1 row-gap-6;
+}
+
+.mini-card {
+    @apply flex flex-col py-6 text-lg text-desa-blue font-bold rounded-lg;
+    background: var(--bg-card);
+}
+
+.mini-card-title {
+    @apply flex flex-wrap py-3 px-6 items-center justify-between;
+}
+
+.mini-card-content {
+    @apply flex flex-wrap py-3 px-6 justify-between;
+}
+
+.mini-card-content span {
+    @apply flex items-end text-5xl leading-none;
+    color: var(--base-color);
+}
+
+.mini-card-content div {
+    @apply flex items-end;
+}
+
+
+
+/* FOOTER */
+
+
+
+.attribution {
+    @apply mt-16 mb-4 text-sm text-center;
+}
+
+.attribution a { 
+    @apply text-desa-blue; 
+}
+
+
+
+/* THEMES */
+
+
+
+.light-theme {
+    --base-color: theme('colors.dark-blue');
+    --bg-color: white;
+    --bg-header: theme('colors.pale-blue');
+    --bg-card: theme('colors.light-gray-blue');
+    --white-gray-toggle: theme('colors.desa-blue');
+    transition: all 0.4s;
+}
+
+.dark-theme {
+    --base-color: white;
+    --bg-color: theme('colors.top-dark-blue');
+    --bg-header: theme('colors.dark-blue');
+    --bg-card: theme('colors.dark-desa-blue');
+    --white-gray-toggle: white;
+    transition: all 0.4s;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --base-color: white;
+        --bg-color: theme('colors.top-dark-blue');
+        --bg-header: theme('colors.dark-blue');
+        --bg-card: theme('colors.dark-desa-blue');
+        --white-gray-toggle: white;
+        transition: all 0.4s;
+    }
+}
+
+
+
+/* RESPONSIVE */
+
+
+
+@screen sm {
+
+    header {
+        @apply pb-40;
+    }
+
+    .cards {
+        @apply grid-cols-2 col-gap-8;
+    }
+
+    .overview .wrapper {
+        @apply grid-cols-2 col-gap-8;
+    }
+}
+
+
+@screen md {
+
+    header .wrapper {
+        @apply flex flex-wrap;
+    }
+
+    .header-title {
+        @apply w-1/2;
+    }
+
+    .toggle-theme {
+        @apply flex w-1/2 justify-end;
+    }
+
+    .toggle-theme span {
+        @apply px-6;
+    }
+
+    hr {
+        @apply hidden;
+    }
+}
+
+@screen lg {
+
+    body{
+        @apply flex flex-col .content-between;
+    }
+
+    .cards {
+        @apply flex-1;
+    }
+
+    h1 {
+        @apply text-4xl;
+    }
+
+    .attribution {
+        @apply w-full;
+    }
+}
+
+@screen xl {
+
+    header {
+        @apply pb-48;
+    }
+
+    .cards {
+        @apply -mt-32 grid-cols-4 col-gap-8;
+    }
+
+    .overview .wrapper {
+        @apply grid-cols-4 col-gap-8;
+    }
+}
