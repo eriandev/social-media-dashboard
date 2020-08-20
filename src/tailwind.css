@@ -18,7 +18,7 @@
 @tailwind utilities;
 
 body {
-    @apply font-inter min-h-screen;
+    @apply min-h-screen font-inter;
     color: var(--base-color);
     background: var(--bg-color);
     user-select: none;
@@ -43,7 +43,7 @@ hr {
 }
 
 .toggle-theme {
-    @apply flex flex-wrap justify-between items-center;
+    @apply flex flex-wrap items-center justify-between;
 }
 
 .toggle-theme span {
@@ -66,7 +66,7 @@ hr {
 }
 
 .switch {
-    @apply block box-border cursor-pointer;
+    @apply box-border block cursor-pointer;
     background: hsl(230, 22%, 74%);
     border-radius: 20px;
     height: 30px;
@@ -93,11 +93,11 @@ hr {
 
 
 .cards {
-    @apply grid grid-cols-1 row-gap-8 -mt-24 mb-6;
+    @apply grid grid-cols-1 row-gap-8 mb-6 -mt-24;
 }
 
 .card {
-    @apply relative w-full py-8 text-center overflow-hidden rounded-lg;
+    @apply relative w-full py-8 overflow-hidden text-center rounded-lg;
     background: var(--bg-card);
 }
 
@@ -132,7 +132,7 @@ hr {
 }
 
 .card-title h3 {
-    @apply px-2 text-desa-blue font-bold;
+    @apply px-2 font-bold text-desa-blue;
 }
 
 .card-body {
@@ -144,16 +144,16 @@ hr {
 }
 
 .card-body span {
-    @apply text-desa-blue uppercase;
+    @apply uppercase text-desa-blue;
     letter-spacing: 0.4em;
 }
 
 .increasing {
-    @apply text-lime-green font-bold;
+    @apply font-bold text-lime-green;
 }
 
 .decreasing {
-    @apply text-bright-red font-bold;
+    @apply font-bold text-bright-red;
 }
 
 
@@ -176,16 +176,16 @@ h4 {
 }
 
 .mini-card {
-    @apply flex flex-col py-6 text-lg text-desa-blue font-bold rounded-lg;
+    @apply flex flex-col py-6 text-lg font-bold rounded-lg text-desa-blue;
     background: var(--bg-card);
 }
 
 .mini-card-title {
-    @apply flex flex-wrap py-3 px-6 items-center justify-between;
+    @apply flex flex-wrap items-center justify-between px-6 py-3;
 }
 
 .mini-card-content {
-    @apply flex flex-wrap py-3 px-6 justify-between;
+    @apply flex flex-wrap justify-between px-6 py-3;
 }
 
 .mini-card-content span {
@@ -279,7 +279,7 @@ h4 {
     }
 
     .toggle-theme {
-        @apply flex w-1/2 justify-end;
+        @apply flex justify-end w-1/2;
     }
 
     .toggle-theme span {
@@ -317,7 +317,7 @@ h4 {
     }
 
     .cards {
-        @apply -mt-32 grid-cols-4 col-gap-8;
+        @apply grid-cols-4 col-gap-8 -mt-32;
     }
 
     .overview .wrapper {
