@@ -1,10 +1,6 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  future: {
-    purgeLayersByDefault: true,
-    removeDeprecatedGapUtilities: true,
-  },
   purge: ['./**/*.html'],
   theme: {
     screens: {
@@ -23,7 +19,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        inter: ['Inter', ...defaultTheme.fontFamily.mono],
+        inter: ['Inter', ...fontFamily.mono],
       },
       colors: {
         /* Primary */

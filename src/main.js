@@ -1,4 +1,5 @@
 'use strict'
+
 const checkbox = document.getElementById('checkbox')
 
 if (window.matchMedia('(prefers-color-scheme: dark)').matches)
