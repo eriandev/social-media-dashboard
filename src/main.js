@@ -1,16 +1,17 @@
 'use strict'
 
-const checkbox = document.getElementById('checkbox')
+const classList = window.document.body.classList;
+const $checkbox = window.document.getElementById('checkbox')
 
 if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-  checkbox.setAttribute('checked', true)
+  $checkbox.setAttribute('checked', true)
 
-checkbox.addEventListener('change', function(event) {
+$checkbox.addEventListener('change', function() {
   if (this.checked) {
-    document.body.classList.remove('light-theme')
-    document.body.classList.add('dark-theme')
+    classList.remove('light-theme')
+    classList.add('dark-theme')
   } else {
-    document.body.classList.remove('dark-theme')
-    document.body.classList.add('light-theme')
+    classList.remove('dark-theme')
+    classList.add('light-theme')
   }
 })
